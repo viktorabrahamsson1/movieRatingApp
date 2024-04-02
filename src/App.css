@@ -1,0 +1,461 @@
+:root {
+  --primaryColor: #255c99;
+  --primaryColor-darker: #1e4a7a;
+  --primaryColor-lighter: #517dad;
+  --primaryColor-morelighter: #92aecc;
+
+  --backgroundColor: #212529;
+
+  --boxColor: #2b3035;
+  --boxColor-light: #404549;
+  --boxColor-summary: #343a40;
+
+  --textColor: #e6e6e6;
+  --textColor-darker: #cccccc;
+
+  --red: #fa5252;
+  --red-dark: #e03131;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+body {
+  line-height: 1;
+  font-weight: 400;
+  color: var(--textColor);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 2.4rem;
+  width: 100%;
+  height: 100vh;
+  padding: 2.4rem;
+
+  background-color: var(--backgroundColor);
+
+  overflow: hidden;
+}
+
+/* -----------------------SCROLLBAR----------------------------- */
+
+::-webkit-scrollbar {
+  background-color: #7775;
+  width: 12px;
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5c5c5c;
+  border-radius: 2rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #838383;
+}
+
+/* ------------------------------------------------------------- */
+/*  ------------------------NAVBAR------------------------------ */
+/* ------------------------------------------------------------- */
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+
+  width: 90%;
+  max-width: 80rem;
+  height: 7.8rem;
+
+  padding: 1.4rem 3.2rem;
+  border-radius: 1rem;
+
+  background-color: var(--primaryColor);
+}
+
+.logo {
+  width: 4rem;
+  height: 4rem;
+}
+
+.navbar-title {
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navbar-searchbar {
+  height: 4.6rem;
+  width: 100%;
+  padding: 0 1.4rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+
+  border: none;
+
+  background-color: var(--primaryColor-lighter);
+  color: var(--textColor-darker);
+
+  transition: transform 0.2s;
+}
+
+.navbar-searchbar:focus {
+  outline-style: none;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+::placeholder {
+  color: var(--primaryColor-morelighter);
+}
+
+.navbar-results {
+  justify-self: end;
+  font-size: 1.8rem;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------MAIN-BOXES-------------------------- */
+/* ------------------------------------------------------------- */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.4rem;
+
+  max-height: 72rem;
+  height: 72rem;
+  width: 90%;
+  max-width: 80rem;
+}
+
+.box-container {
+  position: relative;
+  border-radius: 1rem;
+
+  overflow-y: scroll;
+
+  background-color: var(--boxColor);
+}
+
+.box-container:first-child {
+  padding: 3.6rem 1.6rem;
+}
+
+.btn-toggle {
+  aspect-ratio: 1;
+  background-color: var(--backgroundColor);
+  border: none;
+  border-radius: 50%;
+  color: #dee2e6;
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: 700;
+  height: 2.4rem;
+  position: absolute;
+  right: 0.8rem;
+  top: 0.8rem;
+  z-index: 999;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------MOVIE-LISTS-------------------------- */
+/* ------------------------------------------------------------- */
+
+.list-movies {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  list-style: none;
+}
+
+.movie-container {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding: 1rem;
+
+  border-radius: 0.6rem;
+  border-bottom: 1px solid var(--boxColor-light);
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.movie-container:hover {
+  background-color: var(--boxColor-light);
+}
+
+.movie-information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.movie-poster {
+  width: 5rem;
+  height: 7rem;
+}
+
+.movie-title {
+  font-size: 1.8rem;
+}
+.movie-year {
+  display: flex;
+  gap: 0.8rem;
+
+  font-size: 1.4rem;
+  color: var(--textColor-darker);
+}
+
+/* ------------------------------------------------------------- */
+/* --------------------------RIGHT-BOX-------------------------- */
+/* ------------------------------------------------------------- */
+
+.summary-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 10rem;
+  padding: 0rem 2.6rem;
+  border-radius: 1rem;
+  gap: 1.2rem;
+
+  background-color: var(--boxColor-summary);
+  box-shadow: 0 10px 10px 3px rgba(0, 0, 0, 0.15);
+}
+
+.sumamry-information-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sumamry-information-container p {
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ------------------------------------------------------------- */
+/* -----------------------MOVIE-DETAILS------------------------- */
+/* ------------------------------------------------------------- */
+
+.movie-details-container {
+  display: flex;
+
+  width: 100%;
+  height: 18rem;
+  gap: 2.4rem;
+
+  background-color: var(--boxColor-summary);
+}
+
+.movie-details-container img {
+  height: 100%;
+  width: 32%;
+}
+
+.movie-details-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding-top: 3rem;
+}
+
+.movie-details-container h3 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+.movie-details-container p {
+  font-size: 1.4rem;
+}
+
+.starrating-container {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--boxColor-summary);
+
+  width: 90%;
+  padding: 2rem 3.4rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  gap: 2.4rem;
+  border-radius: 1rem;
+
+  align-self: center;
+}
+
+.starrating-container p {
+  font-size: 1.4rem;
+  align-self: center;
+}
+
+.btn-add {
+  background-color: var(--primaryColor);
+  color: var(--color-text);
+  border: none;
+  border-radius: 10rem;
+  font-size: 1.4rem;
+  padding: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add:hover {
+  background-color: var(--primaryColor-darker);
+}
+
+.btn-back {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  height: 3.2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  /* background-color: var(--boxColor-light); */
+  background-color: #fff;
+  color: var(--boxColor-light);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  font-family: sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-details-specifics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 0 3.4rem;
+
+  font-size: 1.5rem;
+}
+
+/* ------------------------------------------------------------- */
+/* ---------------------WATCHEDMOVIELIST------------------------ */
+/* ------------------------------------------------------------- */
+
+.watched-movie-list-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 16.5%;
+}
+
+.rated-movie {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 1.2rem 2.6rem;
+  border-bottom: 2px solid var(--boxColor-summary);
+  gap: 2rem;
+
+  background-color: var(--boxColor);
+}
+
+.rated-movie img {
+  width: 5rem;
+  height: 7rem;
+}
+
+.rated-movie-info {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+.rated-movie-info h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.rating-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.rating-container p {
+  font-size: 1.6rem;
+}
+
+.btn-delete {
+  position: absolute;
+  right: 2.4rem;
+
+  height: 1.8rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--red);
+  color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-delete:hover {
+  background-color: var(--red-dark);
+}
+
+/* ------------------------------------------------------------- */
+/* --------------------------FOOTER----------------------------- */
+/* ------------------------------------------------------------- */
+
+.footer-container {
+  padding: 0.8rem 0;
+}
+
+.footer-container p {
+  font-size: 1.2rem;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------Helper-Styles------------------------ */
+/* ------------------------------------------------------------- */
+
+.helper-message {
+  position: absolute;
+  text-align: center;
+
+  left: 50%;
+  top: 6rem;
+  transform: translateX(-50%);
+
+  font-size: 2.2rem;
+  width: 30rem;
+}

@@ -1,0 +1,73 @@
+@media screen and (max-width: 850px) {
+  /*  ------------------------NAVBAR---------------------------- */
+  .navbar-title {
+    font-size: 2rem;
+  }
+
+  .navbar-results {
+    font-size: 1.6rem;
+  }
+  .rating-container {
+    gap: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /*  ------------------------NAVBAR---------------------------- */
+  .navbar-container {
+    grid-template-columns: 1fr;
+  }
+  .navbar-title {
+    display: none;
+  }
+
+  .navbar-searchbar {
+    justify-self: center;
+  }
+
+  .navbar-results {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 805px) {
+  /*  ------------------------BOX---------------------------- */
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  .starrating-container {
+    padding: 2.4rem 15rem;
+  }
+
+  .movie-details-container {
+    height: 22rem;
+  }
+  .movie-details-container img {
+    object-fit: cover;
+  }
+
+  .movie-details-specifics-container {
+    padding-bottom: 2.4rem;
+  }
+
+  .watched-movie-list-container {
+    top: 35%;
+  }
+  .rating-container {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .starrating-container {
+    padding: 2.4rem 7.2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .starrating-container {
+    padding: 2.4rem 5rem;
+  }
+}
